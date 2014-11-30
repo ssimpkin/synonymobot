@@ -51,8 +51,10 @@ class TweetListener(tweepy.StreamListener):
         return True
 
 # Filter incoming tweets to @-mentions
-stream = tweepy.streaming.Stream(auth, TweetListener())
-stream.filter(track=['@YOUR_USER_NAME'])
+if __name__ == '__main__':
+    print 'Showing all tweets to @synonymobot'
+    stream = tweepy.streaming.Stream(auth, TweetListener())
+    stream.filter(track=['@YOUR_USER_NAME'])
 
 
 
